@@ -9,7 +9,8 @@ class Helper
 {
     public static function convertToRupiah($price)
     {
-        $price_rupiah = "Rp. " . number_format($price, 2, ',', '.');
+        
+        $price_rupiah = "DH. " . number_format($price, 1, ',');
         return $price_rupiah;
     }
 
@@ -49,6 +50,7 @@ class Helper
         $check_out = strtotime($check_out);
         $date_difference = $check_out - $check_in;
         $date_difference = round($date_difference / (60 * 60 * 24));
+        
         return $date_difference;
     }
 

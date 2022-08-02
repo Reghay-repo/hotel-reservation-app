@@ -67,7 +67,10 @@ class TransactionRoomReservationController extends Controller
     {
         $price = $room->price;
         $dayDifference = Helper::getDateDifference($stayFrom, $stayUntil);
+        dd($dayDifference);
         $downPayment = ($price * $dayDifference) * 0.15;
+
+
         return view('transaction.reservation.confirmation', compact('customer', 'room', 'stayFrom', 'stayUntil', 'downPayment', 'dayDifference'));
     }
 

@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Helpers\Helper;
 use App\Models\Payment;
 use App\Models\Transaction;
-use App\Repositories\PaymentRepository;
+use \PDF;
 use Illuminate\Http\Request;
+use App\Repositories\PaymentRepository;
 
 class PaymentController extends Controller
 {
@@ -42,6 +43,8 @@ class PaymentController extends Controller
 
     public function invoice(Payment $payment)
     {
-        return view('payment.invoice', compact('payment'));
+        $fileName = 'TRANSACTON_ID_' . $payment->transaction_id . '_FACTURE_PAIMENT.pdf' ;
+        $pdf = PDF::loadView('payment.invoice', ['payment' => $payment])->setOptions(['defaultFont' => 'sans-serif']);
+        return $pdf->download($fileName);
     }
 }
