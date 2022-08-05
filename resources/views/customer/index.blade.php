@@ -45,6 +45,14 @@
                     </form>
                 </div>
             </div>
+            <div class="row justify-content-md-center">
+                <div class="col-lg-12">
+                    @if (!empty(request()->input('search')))
+                        <h4>Result for "{{ request()->input('search') }}"</h4>
+                        <h4>Total Data: {{ $customers->count() }}</h4>
+                    @endif
+                </div>
+            </div>
             <div class="row">
                 @forelse ($customers as $customer)
                     <div class="col-lg-2 col-md-4 col-sm-6 my-1">

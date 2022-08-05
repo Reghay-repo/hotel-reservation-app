@@ -39,7 +39,6 @@
                         <li><a class="dropdown-item" href="{{ route('room.index') }}">Room</a></li>
                         <li><a class="dropdown-item" href="{{ route('type.index') }}">Type</a></li>
                         <li><a class="dropdown-item" href="{{ route('roomstatus.index') }}">Status</a></li>
-                        <li><a class="dropdown-item" href="{{ route('facility.index') }}">Facility</a></li>
                     </ul>
                 </li>
                 <li>

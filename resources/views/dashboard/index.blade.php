@@ -33,12 +33,7 @@
                                     <div class="col-lg-12 d-flex justify-content-between">
                                         <h3>Today Guests</h3>
                                         <div>
-                                            <a href="#" class="btn btn-tool btn-sm">
-                                                <i class="fas fa-download"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-tool btn-sm">
-                                                <i class="fas fa-bars"></i>
-                                            </a>
+                                           
                                         </div>
                                     </div>
                                 </div>

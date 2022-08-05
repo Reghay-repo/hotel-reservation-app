@@ -24,9 +24,38 @@
                         </div>
                         <div class="col-md-12">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" " id=" email"
+                            <input type="email" class="form-control @error('email') is-invalid @enderror"  id="email"
                                 name="email" value="{{ $customer->user->email }}" disabled>
                             @error('email')
+                                <div class="text-danger mt-1">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="col-md-12">
+                            <label for="cni" class="form-label">CNI</label>
+                            <input type="text" class="form-control @error('cni') is-invalid @enderror" id="cni" name="cni"
+                                value="{{ $customer->cni }}">
+                                <br>
+                               
+                                <div class="mt-1">
+                                    *optional
+                                </div>
+                            @error('cni')
+                                <div class="text-danger mt-1">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="col-md-12">
+                            <label for="passport_num" class="form-label">Passport Number</label>
+                            <input type="text" class="form-control @error('cni') is-invalid @enderror" id="passport_num" name="passport_num"
+                                value="{{ $customer->passport_num }}">
+                                <br>
+                                <div class="mt-1">
+                                    *optional
+                                </div>
+                            @error('passport_num')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
                                 </div>
@@ -53,19 +82,20 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
-                            <label for="address" class="form-label">Address</label>
-                            <textarea class="form-control" id="address" name="address"
-                                rows="3">{{ $customer->address }}</textarea>
-                            @error('address')
+                            <label for="code_bank" class="form-label">Bank code</label>
+                            <input type="text" class="form-control @error('code_bank') is-invalid @enderror" id="code_bank" name="code_bank"
+                                value="{{ $customer->code_bank }}">
+                            @error('code_bank')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
-                        <div class="col-mg-12">
-                            <label for="avatar" class="form-label">Profile Picture</label>
-                            <input class="form-control" type="file" id="avatar">
-                            @error('avatar')
+                        <div class="col-md-12">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" name="address"
+                                rows="3">{{ $customer->address }}</textarea>
+                            @error('address')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
                                 </div>

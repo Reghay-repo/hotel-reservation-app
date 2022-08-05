@@ -13,9 +13,9 @@ class CustomerRepository
     {
         $customers = Customer::with('user')->orderBy('id', 'DESC');
 
-        if (!empty($request->q)) {
-            $customers = $customers->where('name', 'Like', '%' . $request->q . '%')
-                ->orWhere('id', 'Like', '%' . $request->q . '%');
+        if (!empty($request->search)) {
+            $customers = $customers->where('name', 'Like', '%' . $request->search . '%')
+                ->orWhere('id', 'Like', '%' . $request->search . '%');
         }
 
         $customers = $customers->paginate(8);
@@ -59,13 +59,17 @@ class CustomerRepository
             $user->save();
         }
 
+
         $customer = Customer::create([
             'name' => $user->name,
             'address' => $request->address,
             'job' => $request->job,
+            'code_bank' => $request->code_bank,
             'birthdate' => $request->birthdate,
             'gender' => $request->gender,
-            'user_id' => $user->id
+            'user_id' => $user->id,
+            'cni' => $request->cni,
+            'passport_num' => $request->passport_num,
         ]);
 
         return $customer;

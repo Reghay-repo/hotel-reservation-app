@@ -31,6 +31,7 @@ class CustomerController extends Controller
 
     public function store(StoreCustomerRequest $request)
     {
+        // dd($request->all());
         $customer = $this->customerRepository->store($request);
         return redirect('customer')->with('success', 'Customer ' . $customer->name . ' created');
     }
@@ -45,7 +46,7 @@ class CustomerController extends Controller
         return view('customer.edit', ['customer' => $customer]);
     }
 
-    public function update(Customer $customer, StoreCustomerRequest $request)
+    public function update(Customer $customer, Request $request)
     {
         $customer->update($request->all());
         return redirect('customer')->with('success', 'customer ' . $customer->name . ' udpated!');
@@ -55,7 +56,7 @@ class CustomerController extends Controller
     {
         try {
             $user = User::find($customer->user->id);
-            $avatar_path = public_path('img/user/' . $user->name . '-' . $user->id);
+            // $avatar_path = public_path('img/user/' . $user->name . '-' . $user->id);
 
             $customer->delete();
             $user->delete();

@@ -16,7 +16,10 @@ class Customer extends Model
         'job',
         'birthdate',
         'user_id',
-        'gender'
+        'code_bank',
+        'gender',
+        'cni',
+        'passport_num',
     ];
 
     public function user()

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('style/css/navbar.css') }}">
 <nav class="navbar navbar-expand navbar-light px-1 bg-white shadow-sm" style="height: 55px">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('dashboard.index') }}">
             <img src="{{ asset('img/logo/sip.png') }}" alt="" width="40" height="40"
                 class="d-inline-block align-text-top">
         </a>
@@ -95,8 +95,6 @@
                     <li><a class="dropdown-item"
                             href="{{ route('user.show', ['user' => auth()->user()->id]) }}">Profil</a>
                     </li>
-                    <li><a class="dropdown-item" href="#">Activity</a></li>
-                    <li><a class="dropdown-item" href="#">Setting</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>

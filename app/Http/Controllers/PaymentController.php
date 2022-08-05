@@ -45,6 +45,9 @@ class PaymentController extends Controller
     {
         $fileName = 'TRANSACTON_ID_' . $payment->transaction_id . '_FACTURE_PAIMENT.pdf' ;
         $pdf = PDF::loadView('payment.invoice', ['payment' => $payment])->setOptions(['defaultFont' => 'sans-serif']);
-        return $pdf->download($fileName);
+        return  $pdf->download($fileName);
+
+        // return view('payment.invoice', ['payment' => $payment]);
+        
     }
 }

@@ -10,16 +10,16 @@
             <div class="col-lg-8 ">
             <form class="d-flex" method="GET" action="{{ route('transaction.reservation.pickFromCustomer') }}">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-user"
-                        name="q" value="{{ request()->input('q') }}">
+                        name="search" value="{{ request()->input('search') }}">
                     <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
             </div>
         </div>
         <div class="row justify-content-md-center">
             <div class="col-lg-12">
-                @if (!empty(request()->input('q')))
-                    <h4>Result for "{{ request()->input('q') }}"</h4>
-                    <h4>Total Data: {{ $customersCount }}</h4>
+                @if (!empty(request()->input('search')))
+                    <h4>Result for "{{ request()->input('search') }}"</h4>
+                    <h4>Total Data: {{ $customers->count() }}</h4>
                 @endif
             </div>
         </div>
