@@ -38,6 +38,10 @@
                                             </div>
                                         @enderror
                                         {{-- ======================= --}}
+
+                                        <div class="mt-2 ">
+                                            *Le nombre d'enfants est calculé automatiquement à partir du nombre d'adultes et du nombre total de personnes.
+                                        </div>
                                         
                                         <label for="check_in" class="form-label">
                                             From

@@ -26,7 +26,8 @@
                             <td>{{ $payment->status }}</td>
                             <td>{{ Helper::dateFormatTime($payment->created_at) }}</td>
                             <td>{{ $payment->user->name }}</td>
-                            <td> <a href="{{ route('payment.invoice', $payment->id) }}">Invoice</a> </td>
+                            <td> <a class="btn btn-warning" href="{{ route('payment.download', $payment->id) }}">Download</a>
+                                <a class="btn btn-info" href="{{ route('payment.invoice', $payment->id) }}">View</a> </td>
                         </tr>
                     @empty
                         <tr class="text-center">

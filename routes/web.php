@@ -62,7 +62,8 @@ Route::group(['middleware' => ['auth', 'checkRole:Super,Admin']], function () {
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
     // Route::get('/payment/{payment}/invoice', [PaymentController::class, 'invoice'])->name('payment.invoice');
     
-    Route::get('/payment/{payment}/invoice/download', [PaymentController::class, 'invoice'])->name('payment.invoice');
+    Route::get('/payment/{payment}/invoice/', [PaymentController::class, 'invoice'])->name('payment.invoice');
+    Route::get('/payment/{payment}/invoice/download', [PaymentController::class, 'download'])->name('payment.download');
     // Route::get('/downloadPDF/{id}','DisneyplusController@downloadPDF');
 
 
