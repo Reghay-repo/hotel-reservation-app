@@ -34,6 +34,9 @@
                             <div class="row mb-2">
                                 <input type="text" hidden name="count_person"
                                     value="{{ request()->input('count_person') }}">
+                                <input type="number" hidden  name="person_count" value="{{ $person_count}}">
+                                <input type="number"  hidden name="adult_num" value="{{ $adult_num}}">
+                                <input type="number" hidden  name="kids_num" value="{{ $person_count - $adult_num}}">
                                 <input type="date" hidden name="check_in" value="{{ request()->input('check_in') }}">
                                 <input type="date" hidden name="check_out" value="{{ request()->input('check_out') }}">
                                 <div class="col-lg-6">
@@ -71,7 +74,15 @@
                                             <div class="wrapper">
                                                 <p class="card-text mb-auto demo-1">{{ $room->view }}</p>
                                             </div>
-                                            <a href="{{ route('transaction.reservation.confirmation', ['customer' => $customer->id, 'room' => $room->id, 'from' => request()->input('check_in'), 'to' => request()->input('check_out')]) }}"
+                                            <a href="{{ route('transaction.reservation.confirmation',
+                                             [
+                                                'customer' => $customer->id,
+                                                 'room' => $room->id,
+                                                'from' => request()->input('check_in'),
+                                                 'to' => request()->input('check_out') ,
+                                                 "adult_num" => $adult_num,
+                                                 "kids_num" => $person_count - $adult_num,
+                                                 ]) }}"
                                                 class="btn myBtn shadow-sm border w-100 m-2">Choose</a>
                                         </div>
                                         <div class="col-auto d-none d-lg-block">

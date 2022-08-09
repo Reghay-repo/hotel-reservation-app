@@ -16,6 +16,8 @@ class Transaction extends Model
         'user_id',
         'customer_id',
         'room_id',
+        'adult_num',
+        'kids_num',
         'check_in',
         'check_out',
         'status'

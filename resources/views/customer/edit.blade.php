@@ -36,11 +36,11 @@
                             <label for="cni" class="form-label">CNI</label>
                             <input type="text" class="form-control @error('cni') is-invalid @enderror" id="cni" name="cni"
                                 value="{{ $customer->cni }}">
-                                <br>
+                                {{-- <br>
                                
                                 <div class="mt-1">
                                     *optional
-                                </div>
+                                </div> --}}
                             @error('cni')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
@@ -51,10 +51,10 @@
                             <label for="passport_num" class="form-label">Passport Number</label>
                             <input type="text" class="form-control @error('cni') is-invalid @enderror" id="passport_num" name="passport_num"
                                 value="{{ $customer->passport_num }}">
-                                <br>
-                                <div class="mt-1">
+                                {{-- <br> --}}
+                                {{-- <div class="mt-1">
                                     *optional
-                                </div>
+                                </div> --}}
                             @error('passport_num')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
@@ -86,6 +86,16 @@
                             <input type="text" class="form-control @error('code_bank') is-invalid @enderror" id="code_bank" name="code_bank"
                                 value="{{ $customer->code_bank }}">
                             @error('code_bank')
+                                <div class="text-danger mt-1">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="col-md-12">
+                            <label for="phone_number" class="form-label">Phone number</label>
+                            <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number"
+                                value="{{ $customer->phone_number }}">
+                            @error('phone_number')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
                                 </div>

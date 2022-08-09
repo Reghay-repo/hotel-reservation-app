@@ -55,6 +55,7 @@
             </div>
             <div class="row">
                 @forelse ($customers as $customer)
+                {{-- @dd($customer) --}}
                     <div class="col-lg-2 col-md-4 col-sm-6 my-1">
                         <div class="card shadow-sm justify-content-start" style="min-height:350px; ">
                             <div class="row w-100" style="position:absolute;">
@@ -103,7 +104,7 @@
                                                     <div class="table-responsive">
                                                         <table>
                                                             <tr>
-                                                                <td><i class="fas fa-envelope"></i></td>
+                                                                <td><i class="fa-solid fa-at"></i></td>
                                                                 <td>
                                                                     <span>
                                                                         {{ $customer->user->email }}
@@ -111,34 +112,10 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td><i class="fas fa-user-md"></i></td>
-                                                                <td>
-                                                                    <span>
-                                                                        {{ $customer->job }}
-                                                                    </span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><i class="fas fa-map-marker-alt"></i></td>
-                                                                <td style="white-space:nowrap" class="overflow-hidden">
-                                                                    <span>
-                                                                        {{ $customer->address }}
-                                                                    </span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td><i class="fas fa-phone"></i></td>
                                                                 <td>
                                                                     <span>
-                                                                        +6281233808395
-                                                                    </span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><i class="fas fa-birthday-cake"></i></td>
-                                                                <td>
-                                                                    <span>
-                                                                        {{ $customer->birthdate }}
+                                                                        {{ $customer->phone_number }}
                                                                     </span>
                                                                 </td>
                                                             </tr>

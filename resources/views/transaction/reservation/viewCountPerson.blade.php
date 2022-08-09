@@ -26,6 +26,19 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                        {{-- =============== --}}
+                                        <label for="adult_num" class="form-label mt-3">
+                                            How many adults?
+                                        </label>
+                                        <input type="text" class="form-control @error('adult_num') is-invalid @enderror"
+                                            id="adult_num" name="adult_num" value="{{ old('adult_num') }}">
+                                        @error('adult_num')
+                                            <div class="text-danger mt-1">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        {{-- ======================= --}}
+                                        
                                         <label for="check_in" class="form-label">
                                             From
                                         </label>

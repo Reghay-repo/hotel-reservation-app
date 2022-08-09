@@ -11,9 +11,12 @@ class TransactionRepository
 {
     public function store($request, Customer $customer, Room $room)
     {
+        // dd($request);
         $transaction = Transaction::create([
             'user_id' => auth()->user()->id,
             'customer_id' => $customer->id,
+            'adult_num' => $request->adults_num,
+            'kids_num' => $request->kids_num,
             'room_id' => $room->id,
             'check_in' => $request->check_in,
             'check_out' => $request->check_out,

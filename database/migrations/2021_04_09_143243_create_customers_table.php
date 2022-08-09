@@ -19,6 +19,7 @@ class CreateCustomersTable extends Migration
             $table->string('address');
             $table->string('cni')->nullable(); 
             $table->string('code_bank')->nullable();
+            $table->string('phone_number');
             $table->string('passport_num')->nullable(); 
             $table->enum('gender',['Male', 'Female']);
             $table->string('job');

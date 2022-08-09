@@ -28,12 +28,12 @@ class StoreCustomerRequest extends FormRequest
             'address' => 'required|max:255',
             'job' => 'required',
             'cni' => 'required',
+            'phone_number' => 'required',
             'passport_num' => 'required',
             'code_bank' => 'required',
             'birthdate' => 'required|date',
             'gender' => 'required|in:Male,Female',
             'email' => 'required|unique:users,email',
-            'avatar' => 'mimes:png,jpg',
         ];
     }
 }

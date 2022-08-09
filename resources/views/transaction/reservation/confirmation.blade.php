@@ -71,11 +71,69 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
+                                        <label for="how_long" class="col-sm-2 col-form-label">Number of adults</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="adult_num" name="adults_num"
+                                                placeholder="col-form-label"
+                                                value="{{ $adult_num }} "
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="kids_num" class="col-sm-2 col-form-label">Number of kids</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="kids_num" name="kids_num"
+                                                placeholder="col-form-label"
+                                                value="{{ $kids_num }} "
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
                                         <label for="total_price" class="col-sm-2 col-form-label">Total Price</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="total_price" name="total_price"
                                                 placeholder="col-form-label"
-                                                value="{{ Helper::convertToRupiah(Helper::getTotalPayment($dayDifference, $room->price)) }} "
+                                                value="{{ Helper::getTotalPayment($dayDifference, $room->price) }} "
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    {{-- TPT --}}
+                                    <div class="row mb-3">
+                                        <label for="tpt" class="col-sm-2 col-form-label">TPT</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="tpt" name="tpt"
+                                                placeholder="col-form-label"
+                                                value="{{ ($adult_num + $kids_num) * 8 }} "
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    {{-- TS --}}
+                                    <div class="row mb-3">
+                                        <label for="ts" class="col-sm-2 col-form-label">TS</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="ts" name="ts"
+                                                placeholder="col-form-label"
+                                                value="{{ $adult_num * 7 * $dayDifference  }} "
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    {{-- TPT --}}
+                                    <div class="row mb-3">
+                                        <label for="tva" class="col-sm-2 col-form-label">TVA</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="tva" name="tva"
+                                                placeholder="col-form-label"
+                                                value="{{ 0.1 * (Helper::getTotalPayment($dayDifference, $room->price) + ($adult_num * 7 * $dayDifference) +  (($adult_num + $kids_num) * 8) ) }} "
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    {{-- TTOTAL TTC--}}
+                                    <div class="row mb-3">
+                                        <label for="total_ttc" class="col-sm-2 col-form-label">Total TTC</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="total_ttc" name="price"
+                                                placeholder="col-form-label"
+                                                value="{{ (0.1 * (Helper::getTotalPayment($dayDifference, $room->price) + ($adult_num * 7 * $dayDifference) +  (($adult_num + $kids_num) * 8) )) + ($adult_num * 7 * $dayDifference) + (($adult_num + $kids_num) * 8 ) +(Helper::getTotalPayment($dayDifference, $room->price))}} "
                                                 readonly>
                                         </div>
                                     </div>

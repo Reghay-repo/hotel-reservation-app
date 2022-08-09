@@ -76,11 +76,19 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
+                            <label for="phone_number" class="form-label">Phone number</label>
+                            <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number"
+                                value="{{ old('phone_number') }}">
+                            @error('phone_number')
+                                <div class="text-danger mt-1">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="col-md-12">
                             <label for="cni" class="form-label">CNI</label>
                             <input type="text" class="form-control @error('cni') is-invalid @enderror" id="cni" name="cni"
                                 value="{{ old('cni') }}">
-                                <br>
-                                *optional
                             @error('cni')
                                 <div class="text-danger mt-1">
                                     {{ $message }}
@@ -91,8 +99,6 @@
                             <label for="passport_num" class="form-label">Passport Number</label>
                             <input type="text" class="form-control @error('cni') is-invalid @enderror" id="passport_num" name="passport_num"
                                 value="{{ old('passport_num') }}">
-                                <br>
-                                *optional
                             @error('passport_num')
                                 <div class="text-danger mt-1">
                                     {{ $message }}

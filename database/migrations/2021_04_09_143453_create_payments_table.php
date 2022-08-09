@@ -18,6 +18,13 @@ class CreatePaymentsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('transaction_id')->constrained();
             $table->decimal('price',65,2);
+            
+            $table->decimal('tpt',65,2);
+            $table->decimal('ts',65,2);
+            $table->decimal('tva',65,2);
+            $table->decimal('total_price',65,2);
+            // $table->decimal('total_ttc',65,2);
+            
             $table->timestamps();
         });
     }

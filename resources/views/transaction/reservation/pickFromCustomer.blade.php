@@ -74,7 +74,7 @@
                                                             <td><i class="fas fa-phone"></i></td>
                                                             <td>
                                                                 <span>
-                                                                    +6281233808395
+                                                                    {{ $customer->phone_number }}
                                                                 </span>
                                                             </td>
                                                         </tr>

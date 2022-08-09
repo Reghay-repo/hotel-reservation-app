@@ -17,6 +17,7 @@ class Customer extends Model
         'birthdate',
         'user_id',
         'code_bank',
+        'phone_number',
         'gender',
         'cni',
         'passport_num',

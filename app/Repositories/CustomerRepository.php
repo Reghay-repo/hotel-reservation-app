@@ -46,24 +46,12 @@ class CustomerRepository
             'random_key' => Str::random(60)
         ]);
 
-        if ($request->hasFile('avatar')) {
-            $path = 'img/user/' . $user->name . '-' . $user->id;
-            $path = public_path($path);
-            $file = $request->file('avatar');
-
-            $imageRepository = new ImageRepository;
-
-            $imageRepository->uploadImage($path, $file);
-
-            $user->avatar = $file->getClientOriginalName();
-            $user->save();
-        }
-
 
         $customer = Customer::create([
             'name' => $user->name,
             'address' => $request->address,
             'job' => $request->job,
+            'phone_number' => $request->phone_number,
             'code_bank' => $request->code_bank,
             'birthdate' => $request->birthdate,
             'gender' => $request->gender,

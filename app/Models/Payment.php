@@ -12,6 +12,10 @@ class Payment extends Model
     protected $fillable = [
         'user_id',
         'transaction_id',
+        'tpt',
+        'ts',
+        'tva',
+        'total_price',
         'price',
         'status',
     ];
