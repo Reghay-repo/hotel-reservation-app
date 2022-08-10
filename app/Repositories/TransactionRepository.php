@@ -27,7 +27,7 @@ class TransactionRepository
 
     public function getTransaction($request)
     {
-        $transactions = Transaction::with('user', 'room', 'customer')->where('check_out', '>=', Carbon::now());
+        $transactions = Transaction::with('user', 'room', 'customer','payment')->where('check_out', '>=', Carbon::now());
 
         if (!empty($request->search)) {
             $transactions = $transactions->where('id', '=', $request->search);

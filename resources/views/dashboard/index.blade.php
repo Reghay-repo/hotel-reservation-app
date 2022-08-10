@@ -155,7 +155,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h1>Monthly results</h1>
+                <h1>Résultats mensuels</h1>
                 <div class="form-group mx-sm-3 mb-2">
                     <form action="{{ route('dashboard.index') }}" class="form-inline"  method="GET">
                                 @csrf
@@ -323,7 +323,7 @@
                 {{-- tri monthly table --}}
                <div class="row">
                 <div class="row">
-                    <h1>Periodic Monthly results</h1>
+                    <h1>Résultats trimestriels</h1>
                 <table class="table table-bordered">
                     <thead>
                       <tr>
@@ -389,7 +389,7 @@
                 </div> 
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>yearly results</h1>
+                            <h1>Résultats annuels</h1>
                             <table class="table table-bordered">
                                 <thead>
                                   <tr>

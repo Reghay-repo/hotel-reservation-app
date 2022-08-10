@@ -52,6 +52,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {{-- @dd('tra') --}}
                                 @forelse ($transactions as $transaction)
                                     <tr>
                                         <th>{{ ($transactions->currentpage() - 1) * $transactions->perpage() + $loop->index + 1 }}
@@ -63,6 +64,9 @@
                                         <td>{{ Helper::dateFormat($transaction->check_out) }}</td>
                                         <td>{{ $transaction->getDateDifferenceWithPlural($transaction->check_in, $transaction->check_out) }}
                                         </td>
+                                        @foreach ($transaction->payment as $payment)
+                                            {{-- @dd($payment) --}}
+                                        @endforeach
                                         <td>{{ Helper::convertToRupiah($transaction->getTotalPrice()) }}
                                         </td>
                                         <td>

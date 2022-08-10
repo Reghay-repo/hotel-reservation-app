@@ -43,6 +43,7 @@ class DashboardController extends Controller
             $tri = [
 
             ];
+            $year = 0;
             
             if(!empty($request->year)) {
                 $year = $request->year;
