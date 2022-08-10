@@ -25,14 +25,14 @@
                                                         </span>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                {{-- <tr>
                                                     <td><i class="fas fa-user-md"></i></td>
                                                     <td>
                                                         <span>
                                                             {{ $customer->job }}
                                                         </span>
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 <tr>
                                                     <td><i class="fas fa-map-marker-alt"></i></td>
                                                     <td style="white-space:nowrap" class="overflow-hidden">

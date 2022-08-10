@@ -8,7 +8,6 @@ class ImageRepository
 {
     public function uploadImage($path, $file)
     {
-        // dd($path);
         if (!is_dir($path)) {
             mkdir($path);
         }

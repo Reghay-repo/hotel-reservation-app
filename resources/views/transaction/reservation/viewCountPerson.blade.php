@@ -90,14 +90,14 @@
                                     {{ $customer->name }}
                                 </td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td style="text-align: center; ">
                                     <span>
                                         <i class="fas fa-user-md"></i>
                                     </span>
                                 </td>
                                 <td>{{ $customer->job }}</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td style="text-align: center; ">
                                     <span>

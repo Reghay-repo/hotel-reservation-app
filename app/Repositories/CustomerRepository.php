@@ -50,7 +50,6 @@ class CustomerRepository
         $customer = Customer::create([
             'name' => $user->name,
             'address' => $request->address,
-            'job' => $request->job,
             'phone_number' => $request->phone_number,
             'code_bank' => $request->code_bank,
             'birthdate' => $request->birthdate,

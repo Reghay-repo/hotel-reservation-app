@@ -31,7 +31,6 @@ class CustomerController extends Controller
 
     public function store(StoreCustomerRequest $request)
     {
-        // dd($request->all());
         $customer = $this->customerRepository->store($request);
         return redirect('customer')->with('success', 'Customer ' . $customer->name . ' created');
     }

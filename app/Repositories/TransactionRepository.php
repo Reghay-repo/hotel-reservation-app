@@ -11,7 +11,6 @@ class TransactionRepository
 {
     public function store($request, Customer $customer, Room $room)
     {
-        // dd($request);
         $transaction = Transaction::create([
             'user_id' => auth()->user()->id,
             'customer_id' => $customer->id,
@@ -53,4 +52,93 @@ class TransactionRepository
 
         return $transactionsExpired;
     }
+
+
+
+
+
+   public  function get_monthly_results($request) {
+
+        $num_pax = 0;
+        $num_adults = 0;
+        $num_kids = 0;
+        $total = 0;
+        $tpt = 0;
+        $ts = 0;
+        $tva = 0;
+        $total_ttc = 0;
+     
+        
+        $transactions_in_certan_month_and_year = Transaction::query()
+        ->whereMonth('check_in', $request->month)
+        ->whereYear('check_in', $request->year)
+        ->with('payment')
+        ->orderBy('id', 'DESC')->get();
+
+        foreach ($transactions_in_certan_month_and_year as $transaction) {
+            $num_adults += $transaction->adult_num;
+            $num_kids += $transaction->kids_num;
+            $payment = $transaction->payment[0];
+            $total +=  $payment->price;
+            $tpt +=  $payment->tpt;
+            $ts +=  $payment->ts;
+            $tva +=  $payment->tva;
+            $total_ttc +=  $payment->total_price;
+        }
+
+       
+        return [
+            'number_of_adults' => $num_adults,
+            'number_of_kids' => $num_kids,
+            'number_of_people' => $num_kids + $num_adults,
+            'total_ht' => $total,
+            'tpt' => $tpt,
+            'ts' => $ts,
+            'total_ttc' => $total_ttc,
+        ];
+    }
+
+
+    public function getData($year,$month) 
+    {
+            $num_pax = 0;
+            $num_adults = 0;
+            $num_kids = 0;
+            $total = 0;
+            $tpt = 0;
+            $ts = 0;
+            $tva = 0;
+            $total_ttc = 0;
+            
+            $transactions_in_certan_month_and_year = Transaction::query()
+            ->whereMonth('check_in', $month)
+            ->whereYear('check_in', $year)
+            ->with('payment')
+            ->orderBy('id', 'DESC')->get();
+    
+            foreach ($transactions_in_certan_month_and_year as $transaction) {
+                $num_adults += $transaction->adult_num;
+                $num_kids += $transaction->kids_num;
+                $payment = $transaction->payment[0];
+                $total +=  $payment->price;
+                $tpt +=  $payment->tpt;
+                $ts +=  $payment->ts;
+                $tva +=  $payment->tva;
+                $total_ttc +=  $payment->total_price;
+            }
+    
+           
+            return [
+                'number_of_adults' => $num_adults,
+                'number_of_kids' => $num_kids,
+                'number_of_people' => $num_kids + $num_adults,
+                'total_ht' => $total,
+                'tpt' => $tpt,
+                'ts' => $ts,
+                'tva' => $tva,
+                'total_ttc' => $total_ttc,
+            ];
+    }
+
+   
 }

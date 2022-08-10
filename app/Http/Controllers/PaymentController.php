@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \PDF;
+use NumberFormatter;
 use App\Helpers\Helper;
 use App\Models\Payment;
 use App\Models\Transaction;
@@ -32,7 +33,7 @@ class PaymentController extends Controller
 
     public function store(Transaction $transaction, Request $request)
     {
-        $insufficient = $transaction->getTotalPrice() - $transaction->getTotalPayment();
+        $insufficient = $transaction->getTTTC() - $transaction->getTotalPayment();
         $request->validate([
             'payment' => 'required|numeric|lte:' . $insufficient
         ]);
@@ -46,8 +47,6 @@ class PaymentController extends Controller
     {
         $fileName = 'TRANSACTON_ID_' . $payment->transaction_id . '_FACTURE_PAIMENT.pdf' ;
         $pdf = PDF::loadView('payment.invoice', ['payment' => $payment])->setOptions(['defaultFont' => 'sans-serif']);
-        // return  $pdf->download($fileName);
-
 
         return view('payment.invoice', ['payment' => $payment]);
         
@@ -55,7 +54,9 @@ class PaymentController extends Controller
     public function download(Payment $payment)
     {
         $fileName = 'TRANSACTON_ID_' . $payment->transaction_id . '_FACTURE_PAIMENT.pdf' ;
+
         $pdf = PDF::loadView('payment.invoice', ['payment' => $payment])->setOptions(['defaultFont' => 'sans-serif']);
+
         // return view('payment.invoice', ['payment' => $payment]);
         return  $pdf->download($fileName);
 

@@ -59,7 +59,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <label for="job" class="form-label">Job</label>
                                 <input type="text" class="form-control @error('job') is-invalid @enderror" id="job"
                                     name="job" value="{{ old('job') }}">
@@ -68,7 +68,7 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                            </div>
+                            </div> --}}
                             <div class="col-md-12">
                                 <label for="address" class="form-label">Address</label>
                                 <textarea class="form-control" id="address" name="address"

@@ -16,7 +16,7 @@
                         <p><i class="fa-solid fa-user"></i> Name : {{ $customer->name }} </p>
                         <p><i class="fa-solid fa-location-dot"></i> Addrees: {{ $customer->address }} </p>
                         <p><i class="fa-solid fa-at"></i> Addrees: {{ $customer->user->email }} </p>
-                        <p><i class="fas fa-user-md"></i> Job :  {{ $customer->job }}</p>  
+                        {{-- <p><i class="fas fa-user-md"></i> Job :  {{ $customer->job }}</p>   --}}
                         <p> <i class="fas fa-phone"></i> Phone number :  {{ $customer->phone_number }}</p>
 
                         <p><i class="fas fa-birthday-cake"></i> Birthday :  {{ $customer->birthdate }}</p>  

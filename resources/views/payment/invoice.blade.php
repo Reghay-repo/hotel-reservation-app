@@ -1,5 +1,7 @@
 @extends('template.invoicemaster')
 @section('title', 'Payment')
+
+
 @section('head')
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
@@ -29,7 +31,8 @@
 
         .text-under {
             text-align: center;
-            font-weight: 500
+            font-weight: 500;
+            margin-top:10px;
         }
 
     </style>
@@ -120,7 +123,7 @@
                           </tfoot>
                       </table>
                     <p style="border: 3px solid black" class="text-under">
-                        Arrêtée la présente facture à la somme de Deux Mille Quatre Cent dirhams
+                        Arrêtée la présente facture à la somme de {{ Helper::getDirhamCurrency($payment->price) }}
                     </p>
 
             </div>

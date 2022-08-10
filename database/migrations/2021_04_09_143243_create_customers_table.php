@@ -22,7 +22,6 @@ class CreateCustomersTable extends Migration
             $table->string('phone_number');
             $table->string('passport_num')->nullable(); 
             $table->enum('gender',['Male', 'Female']);
-            $table->string('job');
             $table->date('birthdate');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

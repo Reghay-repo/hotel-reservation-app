@@ -55,16 +55,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="col-md-12">
-                            <label for="job" class="form-label">Job</label>
-                            <input type="text" class="form-control @error('job') is-invalid @enderror" id="job" name="job"
-                                value="{{ old('job') }}">
-                            @error('job')
-                                <div class="text-danger mt-1">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+                
                         <div class="col-md-12">
                             <label for="code_bank" class="form-label">Bank code</label>
                             <input type="text" class="form-control @error('code_bank') is-invalid @enderror" id="code_bank" name="code_bank"

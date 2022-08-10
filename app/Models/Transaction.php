@@ -67,6 +67,17 @@ class Transaction extends Model
         return $totalPayment;
     }
 
+    public function getTTTC()
+    {
+        $ttc = 0;
+        foreach ($this->payment as $payment) {
+            $ttc += $payment->price;
+        }
+        return $ttc;
+    }
+
+
+
     public function getMinimumDownPayment()
     {
         $dayDifference = Helper::getDateDifference($this->check_in, $this->check_out);

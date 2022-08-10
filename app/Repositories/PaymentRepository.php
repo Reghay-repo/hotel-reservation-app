@@ -8,7 +8,6 @@ class PaymentRepository
 {
     public function store($request, $transaction, string $status)
     {
-        // dd($request);
         if(!empty($request->downPayment)){
             $price = $request->downPayment;
         } else {

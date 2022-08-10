@@ -26,7 +26,6 @@ class StoreCustomerRequest extends FormRequest
         return [
             'name' => 'required',
             'address' => 'required|max:255',
-            'job' => 'required',
             'cni' => 'required',
             'phone_number' => 'required',
             'passport_num' => 'required',

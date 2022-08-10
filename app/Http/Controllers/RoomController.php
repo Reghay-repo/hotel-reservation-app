@@ -44,7 +44,6 @@ class RoomController extends Controller
         $customer = [];
         $transaction = Transaction::where([['check_in', '<=', Carbon::now()], ['check_out', '>=', Carbon::now()], ['room_id', $room->id]])->first();
         if(!empty($transaction)) {
-            // dd($transaction);
             $customer = $transaction->customer;
         }
         return view('room.show', compact('customer', 'room'));
