@@ -173,3 +173,13 @@ php artisan websockets:serv     => Terminal 2   //run the websocket server for r
 ## Laravel License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+*****************************************
+
+generate .env file
+Create DB Name: example_db 
+commande : cp .env.example .env
+run : composer install 
+run : php artisan migrate --seed
+run : php artisan serve
+run : php artisan websockets:serve
+
